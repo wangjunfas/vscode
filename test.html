@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <video class="video-js vjs-default-skin" controls="controls"  width="375" height="300" id="player1" webkit-playsinline>
+            <source src="rtmp://wsrtmp.yizhibo.tv:1935/live/0p4kf8k3Aubp" type='rtmp/mp4'>
+        </video>
+    <script type="text/javascript" src="lib/video.min.js"></script>
+    <script>
+        videojs.options.flash.swf = "lib/video-js.swf";
+    </script>
+    <script type="text/javascript">
+        var player = videojs('player1', {}, function() {
+          console.log('Good to go!');
+          this.play(); 
+          this.on('ended', function() {
+            console.log('awww...over so soon?');
+          });
+        });
+    </script>
+    </body>
+</body>
+</html>
